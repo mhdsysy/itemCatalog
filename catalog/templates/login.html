@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google sign in requirements -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    <script>
+        function start() {
+     gapi.load('auth2', function () {
+       auth2 = gapi.auth2.init({
+         client_id: ''
+       });
+     });
+   }
+ </script>
+    <!-- end of google sign in requirements -->
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Lato:300i,400&display=swap" rel="stylesheet" type="text/css">
+<title>Item Catalog</title>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <div class="hero-text-box">
+                <h1>Item Catalog</h1>
+                <button id="signinButton">Login with Google</button>
+                <script>
+                $('#signinButton').click(function() {
+                    function signInCallback(authResult) {
+                        if (authResult['code']) {
+                            $('#signinButton').attr('style', 'display:none');
+                            $.ajax({
+                                type: 'POST',
+                                url: '/gconnect?state={{STATE}}',
+                                processData: false,
+                                data: authResult['code'],
+                                contentType: 'application/octet-stream; charset=utf-8',
+                                success: function(result) {
+                                    if (result) {
+
+                                        setTimeout(function() {
+                                            window.location.href = "/";
+                                        }, 2000);
+                                    } else if (authResult['error']) {
+                                        console.log('There was an error: ' + authResult['error']);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    auth2.grantOfflineAccess().then(signInCallback);
+                })
+                </script>
+            </div>
+    </header>
+    </div>
+</body>
+
+</html>

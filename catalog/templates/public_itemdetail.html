@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400&display=swap" rel="stylesheet" type="text/css">
+    <title>Item Catalog</title>
+</head>
+
+<body>
+    <header>
+            <div class="hero-text-box">
+                <h1>Item Catalog</h1>
+                <a class="btn login-btn" href="{{ url_for('showLogin') }}">Login</a>
+
+            </div>
+    </header>
+
+    <section class="section-content">
+        <div class="row description">
+            <h2>Description</h2>
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+    </section>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- Sticky scroll js -->
+    <script>
+    window.onscroll = function() { myFunction() };
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+    </script>
+</body>
+
+</html>

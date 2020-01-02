@@ -1,0 +1,350 @@
+/* -------------------------------------- */
+/* BASIC SETUP */
+/* -------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+/* -------------------------------------- */
+/* HEADER */
+/* -------------------------------------- */
+
+header {
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+
+/* SCROLL HEADER */
+
+.flash{
+  float: left;
+}
+
+
+.sticky-header-elements {
+    margin-left: 20px;
+    list-style: none;
+}
+
+.sticky-header-elements li {
+  float: right;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.sticky-header-elements li a:link,
+.sticky-header-elements li a:visited {
+    float: right;
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 85%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+.sticky-header-elements li a:hover,
+.sticky-header-elements li a:active {
+    float: right;
+    border-bottom: 2px solid #186939;
+}
+
+.sticky-header {
+    padding: 10px 16px;
+    background: transparent;
+    color: #f1f1f1;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky+.content {
+    padding-top: 102px;
+}
+
+}
+
+/* END OF SCROLL HEADER */
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240% font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 40%;
+    left: 20%;
+    transform: translate(-15%, -50%);
+}
+
+/* Buttons */
+
+
+.login-btn:link,
+.login-btn:visited,
+button,
+input[type=submit] {
+
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    color: #fff;
+    background-color: #24a058;
+    border: 1px solid #24a058;
+    margin-right: 15px;
+
+}
+
+.logout-btn:link,
+.logout-btn:visited {
+    padding: 10px 20px;
+    position: fixed;
+    overflow: auto;
+    text-align: center;
+    color: #fff;
+
+    border: 1px solid #24a058;
+    top: 4%;
+    left: 85%;
+
+}
+
+
+
+
+.add-item-btn {
+    float: right;
+    font-weight: 300;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+
+    padding: 8px 0px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 85%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+
+}
+
+.btn:hover,
+.btn:active,
+button:hover,
+button:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+
+    background-color: #1e8449;
+
+}
+
+.login-btn:hover,
+.login-btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+
+    border: 1px solid #186939;
+
+}
+
+
+
+.logout-btn:hover,
+.logout-btn:active {
+
+    border: 1px solid #186939;
+
+}
+
+/* END OF Buttons */
+
+
+
+/*Category and Items loop */
+.col h2 {
+    margin-left: 20px;
+    color: #000000;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 110%
+}
+
+.col h2:after {
+    display: block;
+    height: 2px;
+    background-color: #186939;
+    content: " ";
+    width: 100px;
+    margin-top: 10px;
+
+
+}
+
+.categories {
+    padding-left: 20%;
+    margin-left: 20px;
+    float: left;
+    list-style: none;
+}
+
+.categories li {
+    display: block;
+    margin-top: 20px;
+}
+
+.categories li a:link,
+.categories li a:visited {
+    padding: 8px 20px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 85%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.categories li a:hover,
+.categories li a:active {
+
+    border-bottom: 2px solid #186939;
+}
+
+
+
+
+.latest-items {
+    padding-left: 20%;
+    margin-left: 20px;
+    float: left;
+    list-style: none;
+}
+
+.latest-items li {
+    display: block;
+    margin-top: 20px;
+}
+
+.latest-items li a:link,
+.latest-items li a:visited {
+    padding: 8px 20px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 85%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.latest-items li a:hover,
+.latest-items li a:active {
+
+    border-bottom: 2px solid #186939;
+}
+
+section {
+    padding: 80px 0;
+    padding-left: 20px;
+}
+/* End of Category and Items loop */
+
+/* ICONS */
+.icon-big {
+    margin-left: 20px;
+    display: block;
+    font-size: 350%;
+    color: #186939;
+    margin-bottom: 10px;
+}
+
+/* THE DESCRIPTION PARAGRAPH OF AN ITEM */
+.description h3{
+    margin-left: 15%;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 110%
+}
+.description h2{
+    margin-left: 15%;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 110%
+}
+
+.description p {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+
+/* END THE DESCRIPTION PARAGRAPH OF AN ITEM */
+
+
+/* Add Item*/
+.add {
+    width: 100%;
+    margin: 0 20%;
+
+}
+/* Forms */
+input,
+select,
+textarea {
+    border-radius: 3px;
+    padding: 7px;
+    border: 1px solid #ccc;
+
+}

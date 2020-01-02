@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400&display=swap" rel="stylesheet" type="text/css">
+    <title>Item Catalog</title>
+</head>
+
+<body>
+    <header>
+        <div class="sticky-header" id="myHeader">
+            <ul class="sticky-header-elements">
+                <li><a href="{{url_for('showCatalog')}}">Cancel</a></li>
+                <li><a href="{{url_for('gdisconnect')}}">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="section-form">
+        <div class="row">
+            <form method="POST" action="{{url_for('editItem',categoryName=categoryName,itemName=itemName)}}" class="add">
+                <h2>Enter the information please.. </h2>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="name" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Description</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="description">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Category</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <select name="category">
+                            {% for category in categories %}
+                            <option value="{{category.name}}">{{category.name}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label></label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="submit" value="confirm" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+    window.onscroll = function() { myFunction() };
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+    </script>
+</body>
+
+</html>
