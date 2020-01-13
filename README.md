@@ -4,6 +4,8 @@
 The Project is an application(Website) that show items and their corresponding categories and allows users to  manage (add,edit,delete..) these items and categories.
 OAuth 2.0 is used as an authentication system. Registered users will have the ability to post, edit and delete their own items only.
 
+![](gif.gif)
+
 ## Instructions
 
 ### Clone the repository <br>
@@ -29,7 +31,7 @@ The Google sign in needs to be enabled by following these steps :
 15-Go to localhost:8000/ <br>
 16-Enjoy :) <br>
 
-![](gif.gif)
+
 
 
 
